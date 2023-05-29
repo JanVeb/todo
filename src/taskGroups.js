@@ -171,4 +171,3 @@ function createSortableGroup(groupName) {
 
   return newGroup;
 }
-localforage.clear();
