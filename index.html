@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <meta http-equiv="Permissions-Policy" content="interest-cohort=()" /> -->
     <title>Vite App</title>
-    <script type="module" crossorigin src="/todo/assets/index-3059b62b.js"></script>
-    <link rel="stylesheet" href="/todo/assets/index-3ea0db79.css">
+    <script type="module" crossorigin src="/todo/assets/index-fa475255.js"></script>
+    <link rel="stylesheet" href="/todo/assets/index-a896259e.css">
   </head>
   <body>
     <div id="app"></div>
@@ -20,87 +20,20 @@
     <!-- Firebase Authentication -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
 
-    <form id="loginForm">
-      <label for="email">Email:</label>
-      <input type="email" id="email" required /><br />
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" required /><br />
-
-      <button type="submit">Log In</button>
-    </form>
     <button id="googleSignInBtn">Sign in with Google</button>
-
-    <script>
-      // Configure Firebase with your project credentials
-      var firebaseConfig = {
-        apiKey: "AIzaSyCbqIk5ayF2MCvjclh0xWKmDeKja0oXk4M",
-        authDomain: "todo-57293.firebaseapp.com",
-        projectId: "todo-57293",
-        storageBucket: "todo-57293.appspot.com",
-        messagingSenderId: "427955179766",
-        appId: "1:427955179766:web:dafa8092228fc12e80dcd7",
-        measurementId: "G-CY6MVKPXTJ",
-      };
-
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-
-      // Add an event listener to the login form
-      document
-        .getElementById("loginForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent form submission
-
-          // Get user input from the form
-          var email = document.getElementById("email").value;
-          var password = document.getElementById("password").value;
-
-          // Sign in the user
-          firebase
-            .auth()
-            .signInWithEmailAndPassword(email, password)
-            .then(function (userCredential) {
-              // User is signed in
-              var user = userCredential.user;
-              console.log("User logged in:", user);
-            })
-            .catch(function (error) {
-              // Handle login errors
-              var errorCode = error.code;
-              var errorMessage = error.message;
-              console.error("Login error:", errorMessage);
-            });
-        });
-
-      // Add an event listener to the Google Sign-In button
-      document
-        .getElementById("googleSignInBtn")
-        .addEventListener("click", function () {
-          // Create an instance of the Google provider object
-          var provider = new firebase.auth.GoogleAuthProvider();
-
-          // Sign in with Google using a pop-up window
-          firebase
-            .auth()
-            .signInWithPopup(provider)
-            .then(function (result) {
-              // User is signed in
-              var user = result.user;
-              console.log("User logged in:", user);
-            })
-            .catch(function (error) {
-              // Handle login errors
-              var errorCode = error.code;
-              var errorMessage = error.message;
-              console.error("Login error:", errorMessage);
-            });
-        });
-    </script>
-
-    <div id="horizontal"></div>
+    
+    
 
     <button id="addNewGrpBtn">Add New Group</button>
+    <!-- <image id="profileImg" src="#" alt="Image"></image> -->
+    <img id="profileImg" src="#" alt="Image" />
+
+    <!-- <script>
+      const imgElement = document.getElementById("profileImg");
+      imgElement.src = `https://lh3.googleusercontent.com/a/AAcHTtd-TKG_LL0lQM15bEFIx9DWCcw2ehS9tMxZvCtp=s96-c`;
+    </script> -->
+
+    <div id="horizontal"></div>
 
     <div id="popup" class="popup">
       <form id="popupForm">
@@ -112,23 +45,3 @@
     </div>
   </body>
 </html>
-<!-- <div id="horizontal">
-  <div class="group-container">
-    <div class="sortable-item">
-      hello
-      <div class="task-item" id="item1">Title: item1 - Date: 12.4.2023</div>
-      <div class="task-item" id="item2">Title: item2 - Date: 12.6.2024</div>
-      <div class="task-item" id="item3">Title: item3 - Date: 12.4.2025</div>
-      <div class="task-item" id="item4">Title: item4 - Date: 12.4.2025</div>
-    </div>
-    <button class="add-new-task-btn">Add New Task</button>
-  </div>
-  <div class="group-container">
-    <div class="sortable-item">
-      world
-      <div class="task-item" id="item1">Title: item1 - Date: 12.4.2023</div>
-      <div class="task-item" id="item2">Title: item2 - Date: 12.6.2024</div>
-    </div>
-    <button class="add-new-task-btn">Add New Task</button>
-  </div>
-</div> -->
